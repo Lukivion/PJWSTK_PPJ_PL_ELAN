@@ -62,24 +62,22 @@ public class MainSE {
 		//zadanie 5
 		String star = "";
 		String space = "";
-		Scanner in = new Scanner(System.in);
-		int width = Math.round(in.nextInt()/2+1);
-		in.close();
+		int width = 13;
 		for(int z = 0; z < width; z++)
 		{
-			star += "* ";
+			star += "+ ";
 		}
 		for(int f = 0; f < width; f++)
 		{
 			System.out.println(space + star);
 			star  = star.substring(2);
-			space += " ";
+			space += "-";
 		}
-		star += "* ";
+		star += "+ ";
 		space = space.substring(1);
 		for(int u = 0; u < width - 1; u++)
 		{
-			star += "* ";
+			star += "+ ";
 			space = space.substring(1);
 			System.out.println(space + star);
 		}

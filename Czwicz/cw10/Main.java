@@ -45,30 +45,40 @@ public class Main {
 	    		for ( int j = i; j < tab.length ; j++)
 	    			System.out.print(tab[i] - tab[j] + ", ") ;
 	    UM.bWN();
-	//zadanie 6 - Незакончено, всместо вывода индекса сделал полную сортировку массива :\
-	    int[][] neo = //new int[4][5];
-	    	{
-	    		{3, 5, 6, 1},  // 
-	    		{7, -2, 9, 8}, // 
-	    		{4, 2, 3, -3}, //
-	    		{3, 5, -1, 9}, //
-	    		{0, 2, 4, 7}   //
-	    	};
-	    /*	for (int j = 0; j < neo[0].length; j++)
-	    	{
-	    		for (int i = 0; i < neo.length; i++)
-	    		{
-	    			neo[i][j] = (int) UM.randy(0, 19);
-	    			UM.pr(neo[i][j] + "\t ");
-	    		}	
-	    	UM.prl();
-	    	}
-	    UM.bW(); */
+	//zadanie 6 - РќРµР·Р°РєРѕРЅС‡РµРЅРѕ, РІСЃРјРµСЃС‚Рѕ РІС‹РІРѕРґР° РёРЅРґРµРєСЃР° СЃРґРµР»Р°Р» РїРѕР»РЅСѓСЋ СЃРѕСЂС‚РёСЂРѕРІРєСѓ РјР°СЃСЃРёРІР° :\
+	    int[][] neo = new int[4][5];
+	    neo = UM.randyneo(neo);
 	//zadanie 7
 	    	neo = UM.sorttrueneo(neo);
 	    	UM.prneo(neo);// - debugging
-	    	UM.prl(neo[0][0] + " !!!");
-	}
+	    	//UM.prl(neo[0][0] + " !!!");
+	UM.bW();
+	//zadanie 8
+	int[][] ilya = new int[5][5];
+    ilya = UM.randyneo(ilya);
+    UM.prneo(ilya);
+    
+    int[] comp = new int[(ilya.length*2)];
+    int count = 0;
+    
+    	for (int y = 0; y < ilya.length; y++)
+    	{
+    			comp[count] = ilya[y][y];
+    			count++;
+    	}
+    	
+    	for (int y = 0; y < ilya.length; y++)
+    	{
+    		comp[count] = ilya[y][(ilya.length - 1 - y)];
+			count++;
+    	}
+    	
+    	UM.bW();
+    
+    UM.prarr(comp);
+    UM.prl(UM.comparr(comp) > 1 ? "Popadaje siД™" :  "Nie popada siД™");
+    		
+	}	
 	
 	
 

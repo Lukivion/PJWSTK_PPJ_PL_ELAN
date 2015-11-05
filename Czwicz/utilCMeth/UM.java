@@ -61,6 +61,19 @@ public class UM
 			}
 	}
 	
+	public static int[][] randyneo(int[][] neo)
+	{
+		for (int j = 0; j < neo[0].length; j++)
+    	{
+    		for (int i = 0; i < neo.length; i++)
+    		{
+    			neo[i][j] = (int) UM.randy(0, 19);
+    		}	
+    	}
+		
+		return neo;
+	}
+	
 	public static double randy(int min, int max)
 	{
 		return(min + Math.random()*((max - min)+1));
@@ -127,11 +140,6 @@ public class UM
     	}
 	}
 	
-	public static void sortneototaly(int[][] neo)
-	{
-
-	}
-	
 	public static void sortarrhoriz(int[][] neo)
 	{
 		for (int k = 0; k < neo.length; k++)
@@ -166,5 +174,21 @@ public class UM
 		int k = arr[i];
 		arr[i] = arr[j];
 		arr[j] = k;
+	}
+	
+	public static int comparr(int[] arr)
+	{
+		int num = 0;
+		int index = 0;
+				for (int j = index + 1; j < arr.length; j++)
+				{
+					if (arr[index] > arr[j])
+					{
+						num++;
+					}
+					index++;
+				}
+			
+		return(num);
 	}
 }
