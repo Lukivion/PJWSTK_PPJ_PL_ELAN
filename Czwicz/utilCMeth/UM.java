@@ -1,8 +1,10 @@
 package utilCMeth;
 
+
 public class UM 
 {
 
+	//STRING SYSO
 	
 	public static void bW()
 	{
@@ -46,10 +48,24 @@ public class UM
 		prl("Debug " + i);
 	}
 	
+	public static void prarru(int[] arr)
+	{
+		for(int i = 0; i < arr.length; i++)
+			pr(arr[i] + ", ");
+		prl();
+	}
+	
 	public static void prarr(int[] arr)
 	{
 		for(int i = 0; i < arr.length; i++)
 			pr(arr[i] + "\t ");
+		prl();
+	}
+	
+	public static void prarr(String[] arr)
+	{
+		for(int i = 0; i < arr.length; i++)
+			pr(arr[i] + " ");
 		prl();
 	}
 	
@@ -61,23 +77,33 @@ public class UM
 			}
 	}
 	
-	public static int[][] randyneo(int[][] neo)
+	//RANDOM
+	
+	public static void randyarr(int[] arr)
+	{
+    		for (int i = 0; i < arr.length; i++)
+    		{
+    			arr[i] = (int) UM.randy(0, 19);
+    		}	
+    }
+	
+	public static void randyneo(int[][] neo)
 	{
 		for (int j = 0; j < neo[0].length; j++)
     	{
     		for (int i = 0; i < neo.length; i++)
     		{
     			neo[i][j] = (int) UM.randy(0, 19);
-    		}	
+    		}
     	}
-		
-		return neo;
 	}
 	
 	public static double randy(int min, int max)
 	{
 		return(min + Math.random()*((max - min)+1));
 	}
+	
+	//SORTING
 	
 	public static void sortarr(int[] arr)
 	{
@@ -155,11 +181,20 @@ public class UM
     	}
 	}
 	
+	//SWAPERS - MOVERS
+	
 	public static void swparr(int[][] arr, int i, int j, int pos)
 	{
 		int k = arr[pos][i];
 		arr[pos][i] = arr[pos][j];
 		arr[pos][j] = k;
+	}
+	
+	public static void swparr(String[] arr, int i, int j )
+	{
+		String k = arr[i];
+		arr[i] = arr[j];
+		arr[j] = k;
 	}
 	
 	public static void swparrver(int[][] arr, int i, int j, int pos)
@@ -175,14 +210,48 @@ public class UM
 		arr[i] = arr[j];
 		arr[j] = k;
 	}
+	/*needs tweaks
+	public static void movearrleft(int[] arr, int pos)
+	{
+		int[] num = {arr[arr.length - 1], pos};
+		if(pos >= 1)
+				for(;pos < arr.length; pos++)
+				{
+					arr[pos-1] = arr[pos];
+				}
+		arr[num[1]] = num[0];
+	}
+	*/
+	public static void movearrRfromPos(int[] arr, int pos)
+	{
+		int m = arr.length - 2;
+		if(pos >= 0 )
+				for(; m >= pos; m--)
+				{
+					swparr(arr, m + 1, m);
+				}
+		
+	}
 	
-	public static int comparr(int[] arr)
+	public static void movearrRtoPos(int[] arr, int pos)
+	{
+		if(pos >= 0 )
+				for(; pos > 0; pos--)
+				{
+					swparr(arr, pos - 1, pos);
+				}
+		
+	}
+
+	//COMPARING
+	
+	public static int comparrttl(char[] arr)
 	{
 		int num = 0;
 		int index = 0;
 				for (int j = index + 1; j < arr.length; j++)
 				{
-					if (arr[index] > arr[j])
+					if (arr[index] == arr[j])
 					{
 						num++;
 					}
@@ -190,5 +259,58 @@ public class UM
 				}
 			
 		return(num);
+	}
+	
+	public static int comparrttl(int[] arr)
+	{
+		int num = 0;
+			for(int i = 0; i < arr.length - 1 ;)
+			{
+				for (int j = i + 1; j < arr.length; j++)
+				{
+					if (arr[i] > arr[j])
+					{
+						num++;
+					}
+				}
+			}
+		return(num);
+	}
+	
+	public static boolean comparratl(int[] arr, int atl)
+	{
+			for(int i = 0; i < arr.length - 1 ;)
+			{
+				int num = 0;
+				for (int j = i + 1; j < arr.length; j++)
+				{
+					if (arr[i] > arr[j])
+					{
+						num++;
+					}
+				if(num >= atl)
+					return true;
+				}
+			}
+		return false;
+	}
+
+	//CUSTOM COPY
+	
+	public static void copydiag(int[][] neo, int[] arr)
+	{
+		 int count = 0;
+		    
+	    	for (int y = 0; y < neo.length; y++)
+	    	{
+	    			arr[count] = neo[y][y];
+	    			count++;
+	    	}
+	    	
+	    	for (int y = 0; y < neo.length; y++)
+	    	{
+	    		arr[count] = neo[y][(neo.length - 1 - y)];
+				count++;
+	    	}
 	}
 }

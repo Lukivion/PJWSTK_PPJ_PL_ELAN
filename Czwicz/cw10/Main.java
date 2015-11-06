@@ -47,7 +47,7 @@ public class Main {
 	    UM.bWN();
 	//zadanie 6 - Незакончено, всместо вывода индекса сделал полную сортировку массива :\
 	    int[][] neo = new int[4][5];
-	    neo = UM.randyneo(neo);
+	    UM.randyneo(neo);
 	//zadanie 7
 	    	neo = UM.sorttrueneo(neo);
 	    	UM.prneo(neo);// - debugging
@@ -55,7 +55,7 @@ public class Main {
 	UM.bW();
 	//zadanie 8
 	int[][] ilya = new int[5][5];
-    ilya = UM.randyneo(ilya);
+    UM.randyneo(ilya);
     UM.prneo(ilya);
     
     int[] comp = new int[(ilya.length*2)];
@@ -76,7 +76,7 @@ public class Main {
     	UM.bW();
     
     UM.prarr(comp);
-    UM.prl(UM.comparr(comp) > 1 ? "Popadaje się" :  "Nie popada się");
+    UM.prl(UM.comparrttl(comp) > 1 ? "Popada się" :  "Nie popada się");
     		
 	}	
 	
