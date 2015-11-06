@@ -79,21 +79,21 @@ public class UM
 	
 	//RANDOM
 	
-	public static void randyarr(int[] arr)
+	public static void randyarr(int[] arr, int min, int max)
 	{
     		for (int i = 0; i < arr.length; i++)
     		{
-    			arr[i] = (int) UM.randy(0, 19);
+    			arr[i] = (int) UM.randy(min, max);
     		}	
     }
 	
-	public static void randyneo(int[][] neo)
+	public static void randyneo(int[][] neo, int min, int max)
 	{
 		for (int j = 0; j < neo[0].length; j++)
     	{
     		for (int i = 0; i < neo.length; i++)
     		{
-    			neo[i][j] = (int) UM.randy(0, 19);
+    			neo[i][j] = (int) UM.randy(min, max);
     		}
     	}
 	}
@@ -279,12 +279,12 @@ public class UM
 	
 	public static boolean comparratl(int[] arr, int atl)
 	{
-			for(int i = 0; i < arr.length - 1 ;)
+			for(int i = 0; i < arr.length - 1 ; i++)
 			{
 				int num = 0;
 				for (int j = i + 1; j < arr.length; j++)
 				{
-					if (arr[i] > arr[j])
+					if (arr[i] == arr[j])
 					{
 						num++;
 					}

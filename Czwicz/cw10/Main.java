@@ -47,7 +47,7 @@ public class Main {
 	    UM.bWN();
 	//zadanie 6 - Незакончено, всместо вывода индекса сделал полную сортировку массива :\
 	    int[][] neo = new int[4][5];
-	    UM.randyneo(neo);
+	    UM.randyneo(neo, -25, 25);
 	//zadanie 7
 	    	neo = UM.sorttrueneo(neo);
 	    	UM.prneo(neo);// - debugging
@@ -55,7 +55,7 @@ public class Main {
 	UM.bW();
 	//zadanie 8
 	int[][] ilya = new int[5][5];
-    UM.randyneo(ilya);
+    UM.randyneo(ilya, 0, 20);
     UM.prneo(ilya);
     
     int[] comp = new int[(ilya.length*2)];

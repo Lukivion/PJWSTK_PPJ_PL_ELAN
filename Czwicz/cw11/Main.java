@@ -31,7 +31,7 @@ public class Main {
 		 //zadanie 3
 		{ 
 		 int[] arr = new int[20];
-		 UM.randyarr(arr);
+		 UM.randyarr(arr, 0, 20);
 		 UM.prarru(arr);
 		 UM.bWm();
 		 UM.movearrRfromPos(arr, 10);
@@ -48,9 +48,9 @@ public class Main {
 		 int[] arr1 = new int[10];
 		 int[] arr2 = new int[10];
 		 int[] arr3 = new int[10];
-		 UM.randyarr(arr1);
-		 UM.randyarr(arr2);
-		 UM.randyarr(arr3);
+		 UM.randyarr(arr1, 0, 20);
+		 UM.randyarr(arr2, 0, 20);
+		 UM.randyarr(arr3, 0, 20);
 		 int[][] neo = {arr1, arr2, arr3};
 		 UM.prneo(neo);
 		 //
@@ -59,7 +59,7 @@ public class Main {
 		 //zadanie 5
 		{
 			int[][] neo = new int[8][8];
-			UM.randyneo(neo);
+			UM.randyneo(neo, 0, 20);
 			UM.prneo(neo);
 			int[] arr = new int[(neo.length*2)];
 			UM.copydiag(neo, arr);
