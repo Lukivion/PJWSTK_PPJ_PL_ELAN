@@ -33,10 +33,15 @@ public class UM
 		System.out.print(p);
 	}
 	
+	public static void prl(int p)
+	{
+		System.out.println(p);
+	}
+	
 	public static void prl()
 	{
 		System.out.println();
-	}
+	} 
 	
 	public static void prl(String p)
 	{
@@ -69,7 +74,22 @@ public class UM
 		prl();
 	}
 	
+	public static void prarr(char[] arr)
+	{
+		for(int i = 0; i < arr.length; i++)
+			pr(arr[i] + " ");
+		prl();
+	}
+	
 	public static void prneo(int[][] neo)
+	{
+			for(int i = 0; i < neo.length; i++)
+			{
+				prarr(neo[i]);
+			}
+	}
+	
+	public static void prneo(char[][] neo)
 	{
 			for(int i = 0; i < neo.length; i++)
 			{
@@ -261,6 +281,20 @@ public class UM
 		return(num);
 	}
 	
+	public static int comparrttl(char[] arr, char o)
+	{
+		int num = 0;
+				for (int j = 0; j < arr.length; j++)
+				{
+					if (o == arr[j])
+					{
+						num++;
+					} 
+				}
+			
+		return(num);
+	}
+	
 	public static int comparrttl(int[] arr)
 	{
 		int num = 0;
@@ -296,7 +330,6 @@ public class UM
 	}
 
 	//CUSTOM COPY
-	
 	public static void copydiag(int[][] neo, int[] arr)
 	{
 		 int count = 0;
@@ -314,3 +347,4 @@ public class UM
 	    	}
 	}
 }
+	
