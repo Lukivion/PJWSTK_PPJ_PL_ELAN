@@ -16,8 +16,8 @@ public class MainSE {
 		printarr(arr1);
 		printarr(arr2);
 		printarr(arr3);
-		int[][] neo = {arr1, arr2, arr3};
 		UM.bW();
+		int[][] neo = {arr1, arr2, arr3};
 		printneo(neo); 
 		}
 		//zadanie 5
@@ -48,7 +48,7 @@ public class MainSE {
 				index++;
 			}	
 	}
-
+	
 	private static int random(int min, int max)
 	{
 		return(min + (int)(Math.random()*((max - min) + 1)));

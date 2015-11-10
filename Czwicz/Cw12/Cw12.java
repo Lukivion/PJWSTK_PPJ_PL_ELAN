@@ -50,21 +50,51 @@ public class Cw12 {
 			UM.prneo(charly);
 			UM.bW();
 			//VI
-			char[][] spi = new char[20][20];
-			box(spi);
-			fillspiral(spi);
+			char[][] spi = new char[25][25];
+			int smile = spi.length/2;
 			
-			spi[11][11] = ':';
-			spi[11][12] = ')';
+			fillspiral(spi, 0);
+			
+			spi[smile][smile] = ':';
+			spi[smile][smile + 1] = ')';
 			UM.prneo(spi);
 		}
 	}
 	
-	private static void fillspiral(char[][] spi) {
-		int num = 0;
-		int pos = spi.length - 2;
-		rightCor(spi, num, pos);
-		
+	public static void show(int x)
+	{ 
+		System.out.println(x);
+	}
+	private static void fillspiral(char[][] spi,int num) 
+	{
+		if (num -1 < spi.length/5)
+		{
+			rightDownCor(spi, num, 'o');
+			leftTopCor(spi, num, 'o');
+			leftDownCor(spi, num, '-');
+			rightTopCor(spi, num, '-');
+			
+			
+			num++;
+			fillspiral(spi, num);
+		}
+		else
+		{
+			box(spi);
+		}
+
+	}
+
+	private static void rightTopCor(char[][] spi, int n, char o) 
+	{
+		fillRowFromTo(spi, 2*n + 1, 2*n + 3, spi.length - 2 - 2*n, o);
+		fillColFromTo(spi, spi.length - 2*n - 2,  2*n + 2 , spi.length - 2 - 2*n, o);
+	}
+
+	private static void rightDownCor(char[][] spi, int n, char o) 
+	{	
+		fillRowFromTo(spi, spi.length -  2*n - 3, 2*n + 2, spi.length - 4 - 2*n, o);
+		fillColFromTo(spi, spi.length - 2*n - 1, 2*n  , spi.length - 1 - 2*n, o);	
 	}
 
 	public static void box(char[][] spi)
@@ -74,10 +104,18 @@ public class Cw12 {
 		fillRow(spi, spi.length - 1 , 'o');
 	}
 	
-	public static void rightCor(char[][] spi, int n, int pos)
+	public static void leftTopCor(char[][] spi, int n, char o)
 	{
-		fillRowFromTo(spi,  2*n - 1, 2*n , spi[pos].length - 2 - 2*n, 'o');
-		fillColFromTo(spi, 2*n - 1, 2*n , spi[pos].length - 1 - 2*n, 'o');
+		fillRowFromTo(spi, 2*n, 2*n + 2, spi.length - 2 - 2*n, o);
+		fillColFromTo(spi, 2*n + 2, 2*n  , spi.length - 3 - 2*n, o);
+		
+	}
+	
+	public static void leftDownCor(char[][] spi, int n, char o)
+	{
+		
+		fillRowFromTo(spi, spi.length -  2*n - 2, 2*n + 2, spi.length - 3 - 2*n, o);
+		fillColFromTo(spi, 2*n + 1, 2*n  , spi.length - 2 - 2*n, o);
 	}
 
 	private static void fillCol(char[][] charly, int col, char val) 
