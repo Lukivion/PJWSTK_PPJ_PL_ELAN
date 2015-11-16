@@ -48,6 +48,11 @@ public class UM
 		System.out.println(p);
 	}
 	
+	public static void prl(boolean p)
+	{
+		System.out.println(p);
+	}
+	
 	public static void prd(int i) 
 	{
 		prl("Debug " + i);
@@ -327,6 +332,129 @@ public class UM
 				}
 			}
 		return false;
+	}
+	
+	public static boolean[] kryteriumy(char[] arr)
+	{
+		      //kryteriumy  1     2     3       4
+		boolean[] kryt = {false, true, false, false};
+		int sum = 0;
+		for(int j = 0; j < arr.length; j++)
+		{
+			// Ceking for letters and sumbols
+			for(int k = j + 1; k < arr.length; k++)
+				if(arr[j] == arr[k])
+					kryt[0] = true;
+				else if (Character.toLowerCase(arr[j]) == Character.toLowerCase(arr[k]))
+					kryt[3] = true;
+			//counting sum
+			sum += arr[j];
+			//cheking for 'i'
+			if(arr[j] == 'i')
+				kryt[2] = true;
+		}
+		//cheking for sum < 255
+		if(sum < 255)
+			kryt[1] = false;;
+		return kryt;
+		
+	}
+	//ARR EXCHANGE
+	
+	public static void rightTopCor(char[][] spi, int n, char o) 
+	{
+		fillRowFromTo(spi, 2*n + 1, 2*n + 3, spi.length - 2 - 2*n, o);
+		fillColFromTo(spi, spi.length - 2*n - 2,  2*n + 2 , spi.length - 2 - 2*n, o);
+	}
+
+	public static void rightDownCor(char[][] spi, int n, char o) 
+	{	
+		fillRowFromTo(spi, spi.length -  2*n - 3, 2*n + 2, spi.length - 4 - 2*n, o);
+		fillColFromTo(spi, spi.length - 2*n - 1, 2*n  , spi.length - 1 - 2*n, o);	
+	}
+
+	public static void box(char[][] spi)
+	{
+		fillCol(spi, 0, 'o');
+		fillCol(spi, spi.length - 1, 'o');
+		fillRow(spi, spi.length - 1 , 'o');
+	}
+	
+	public static void leftTopCor(char[][] spi, int n, char o)
+	{
+		fillRowFromTo(spi, 2*n, 2*n + 2, spi.length - 2 - 2*n, o);
+		fillColFromTo(spi, 2*n + 2, 2*n  , spi.length - 3 - 2*n, o);
+		
+	}
+	
+	public static void leftDownCor(char[][] spi, int n, char o)
+	{
+		
+		fillRowFromTo(spi, spi.length -  2*n - 2, 2*n + 2, spi.length - 3 - 2*n, o);
+		fillColFromTo(spi, 2*n + 1, 2*n  , spi.length - 2 - 2*n, o);
+	}
+
+	public static void fillCol(char[][] charly, int col, char val) 
+	{
+		for (int i = 0; i < charly.length; i++)
+		{
+			charly[i][col] = val;
+		}
+
+	}
+	public static void fillRow(char[][] charly, int row, char val) 
+	{
+		for (int i = 0; i < charly[row].length; i++)
+		{
+			charly[row][i] = val;
+		}
+		
+	}
+	
+	public static void fillColFromTo(char[][] charly, int col, int from, int to, char val) 
+	{
+		if ( from > to)
+		{
+			int k = from;
+			from = to;
+			to= k;
+		}
+			for (int i = from; i <= to; i++)
+			{
+				charly[i][col] = val;
+			}
+
+	}
+	public static void fillRowFromTo(char[][] charly, int row, int from, int to, char val) 
+	{
+		if ( from > to)
+		{
+			int k = from;
+			from = to;
+			to= k;
+		}
+			for (int i = from; i <= to; i++)
+			{
+				charly[row][i] = val;
+			}
+
+	}
+	
+	public static void fillColFromTo(char[][] charly, int col, int[] pos, char val) 
+	{
+		for (int i = 0; i < pos.length; i++)
+		{
+			charly[pos[i]][col] = val;
+		}
+
+	}
+	public static void fillRowFromTo(char[][] charly, int row, int[] pos, char val) 
+	{
+		for (int i = 0; i < pos.length; i++)
+		{
+			charly[row][pos[i]] = val;
+		}
+
 	}
 
 	//CUSTOM COPY
