@@ -59,7 +59,8 @@ public class Main
 		UM.bW();
 		//zadanie 5
 		{
-			zarandomNWD();
+				for(int i = 0; i < 10; i++)
+					zarandomNWD();
 		}
 	}
 
