@@ -17,6 +17,7 @@ public class Main
 			UM.randyneo(neo, 0, 1);
 			UM.prl(isDiagonal(neo));
 			UM.prneo(neo);
+			
 		}
 		//
 		UM.bW();

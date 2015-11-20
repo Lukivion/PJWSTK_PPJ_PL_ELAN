@@ -344,8 +344,11 @@ public class UM
 			// Ceking for letters and sumbols
 			for(int k = j + 1; k < arr.length; k++)
 				if(arr[j] == arr[k])
+				{
 					kryt[0] = true;
-				else if (Character.toLowerCase(arr[j]) == Character.toLowerCase(arr[k]))
+					if(Character.isLetter(arr[j]))
+							kryt[3] = true;
+				}else if (Character.toLowerCase(arr[j]) == Character.toLowerCase(arr[k]) && Character.isLetter(arr[j]))
 					kryt[3] = true;
 			//counting sum
 			sum += arr[j];
