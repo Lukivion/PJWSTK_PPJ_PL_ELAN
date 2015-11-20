@@ -71,13 +71,9 @@ public class Main
 		UM.randyarr(arr, 0, 100);
 		UM.prarr(arr);
 		
-		if(arr[0] == 1 || arr[1] == 1)
-		{
-			arr[1] = 1;
-		} else if(arr[0] == 0 || arr[1] == 0 || arr[0] == arr[1])
-		{
-			arr[1] = 0;
-		} else while (arr[0]%arr[1] != 0)
+		if(arr[0] == 1 || arr[1] == 1);
+		else if(arr[0] == 0 || arr[1] == 0 || arr[0] == arr[1]);
+		else while (arr[0]%arr[1] != 0)
 		{
 			if(arr[0] < arr[1])
 				UM.swparr(arr, 1, 0);
